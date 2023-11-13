@@ -4,13 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addCart, addedid } from "../Store/CategorySlice";
 import { useNavigate } from "react-router-dom";
-import appwriteService from "../appwrite/config";
-import { Query } from "appwrite";
 
 function SingleProduct() {
   // const [data ,setData]= useState(null)
   // const [Loading ,setLoading] = useState(false)
-  const UserdataId=useSelector((state)=>state.userData?state.userData.$id:null)
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { name } = useParams();
@@ -20,21 +17,20 @@ function SingleProduct() {
   const filterProduct = AllProducts
     ? AllProducts.filter((item) => item.id == Number(name))
     : [];
-
-    //this apwrite point
-    const [post,setpost] = useState([])
-    appwriteService.getPosts([Query.equal("userId", `${UserdataId && UserdataId}`)]).then((posts) => {
-      if (posts) {
-        setpost(posts.documents)
-      }
-      // else{setpost('ak')}
-  })
-  console.log(post)
- if(UserdataId) console.log(post)
   const ideaof = filterProduct ? useSelector((state) => state.Addedid) : [];
   const activity =
     ideaof.length != 0 ? ideaof.includes(filterProduct[0].id) : false;
- 
+  // window.addEventListener("beforeunload", function (e) {
+  //   // Cancel the event
+  //   e.preventDefault();
+  //   // Chrome requires returnValue to be set
+  //   e.returnValue = "";
+
+  //   // Display a confirmation message to the user
+  //   const confirmationMessage = "Leaving this page will result in data loss.";
+  //   e.returnValue = confirmationMessage;
+  //   return confirmationMessage;
+  // });
   useEffect(() => {
     if (filterProduct.length != 0) {
       if (index < 0) {
@@ -42,13 +38,14 @@ function SingleProduct() {
       }
       if (index > filterProduct[0].images.length - 1) {
         setindex(0);
+        // if(index===0) setindex(0)
       }
     }
   }, [index]);
 
   const [quantity, setquantity] = useState(1);
-  // if (filterProduct.length != 0)
-  //   console.log(typeof filterProduct[0].images.length);
+  if (filterProduct.length != 0)
+    console.log(typeof filterProduct[0].images.length);
   if (filterProduct.length != 0) {
     return (
       <section className="flex " id="CategoryItems">
@@ -108,12 +105,12 @@ function SingleProduct() {
                   if (authstatus) {
                     if (!activity) {
                       dispatch(addedid(filterProduct[0].id));
-                      // // dispatch(
-                      // //   addCart([
-                      // //     filterProduct[0],
-                      // //     { quantityid: Number(quantity) },
-                      // //   ])
-                      // );
+                      dispatch(
+                        addCart([
+                          filterProduct[0],
+                          { quantityid: Number(quantity) },
+                        ])
+                      );
                     }
                     navigate("/cart");
                   }

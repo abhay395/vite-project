@@ -5,7 +5,7 @@ import { addFilterData } from "../Store/CategorySlice";
 
 export default function AllProducts() {
   // State variables for sorting and filtering
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   
   // sort for high and low 
   const [active, setactive] = useState("relevent");
@@ -86,7 +86,7 @@ useEffect(()=>{
     }
 
     setData(filteredData);
-  }, [active, is4, max, min, categoryValue, brandValue]);
+  }, [active, is4, max, categoryValue, brandValue]);
 
   if (allData.length>0)
     return (
