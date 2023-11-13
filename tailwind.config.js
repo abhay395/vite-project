@@ -1,25 +1,12 @@
-// webpack.config.js
-const tailwindcss = require('tailwindcss');
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
 
-module.exports = {
-  // ...
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [tailwindcss],
-              },
-            },
-          },
-        ],
-      },
-    ],
+  theme: {
+    extend: {},
   },
-};
+  plugins: [],
+}
