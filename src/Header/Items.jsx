@@ -38,7 +38,7 @@ function Items({ Category }) {
            <Link to={`/al/${item.id}`}>
                 <img
                   src={
-                    item.images[0]|| '../../public/img/images.png'
+                    item.images[0]|| 'https://img.freepik.com/premium-photo/floating-computer-online-shop-shopping-bags_72104-2478.jpg'
                   }
                   alt={item.title}
                   className="w-[300px] h-[75%]"
