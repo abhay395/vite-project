@@ -38,7 +38,7 @@ function Items({ Category }) {
            <Link to={`/al/${item.id}`}>
                 <img
                   src={
-                    item.images ? item.images[0]:'https://img.freepik.com/free-vector/white-gray-geometric-pattern-background_53876-115288.jpg?w=360&t=st=1699879719~exp=1699880319~hmac=af3cf91630ab2f3fbd5cf0eea16e542aacd48590d7fe8b2586fa50315c4a7722'
+                    item.images[0]|| '../../public/img/images.png'
                   }
                   alt={item.title}
                   className="w-[300px] h-[75%]"
