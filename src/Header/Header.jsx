@@ -47,7 +47,7 @@ function Header() {
   ];
   return (
     <div>
-      <ul className="flex space-x-10 px-[45px] z-100 bg-cyan-700 shadow-2xl sticky py-2 text-cyan-300 ">
+      <ul className="flex space-x-10 text-[10px] items-center px-[45px] z-100 bg-cyan-700 shadow-2xl sticky py-2 text-cyan-300 ">
         {/* <li><input type="text" onChange={(e)=>setsearchitem(e.currentTarget.value)}  value={searchitem} placeholder='Search your product' className='p-1 rounded-sm outline-none mr-2 text-black ' /><button onClick={()=>{ dispatch(SetSearchitem(searchitem));navigate('searchitem'); }} className='rounded-sm bg-white p-1 text-black' >Search</button></li> */}
         {navItems.map((item) => {
           return item.active ? (

@@ -32,7 +32,7 @@ function Items({ Category }) {
           <div
             id="bounce-element"
             key={item.id}
-            className="bg-white border rounded-md border-white p-2 overflow-hidden shadow-2xl h-[400px] w-[300px]"
+            className="bg-white border rounded-md border-white p-2 flex overflow-hidden shadow-2xl h-[150px] w-[90%]"
             
           >
            <Link to={`/al/${item.id}`}>
@@ -41,11 +41,11 @@ function Items({ Category }) {
                     item.images[0]|| 'https://img.freepik.com/premium-photo/floating-computer-online-shop-shopping-bags_72104-2478.jpg'
                   }
                   alt={item.title}
-                  className="w-[300px] h-[75%]"
+                  className="w-[200px] h-[100%] "
                 />
               </Link>
+            <div className="flex flex-col ml-[10px] ">
             <p className="font-bold text-[20px]">{item.title}</p>
-            <div className="flex flex-col ">
               <h1 className="text-yellow-500 text-[20px] ">
                 &#9733;&#9733;&#9733;&#9733;
                 <span className="text-[15px] text-black">{item.rating}k</span>
