@@ -17,7 +17,7 @@ function Home() {
     <div id="CategoryItems" >
       <section id="hero-Section">
         <div className="relative">
-          <img src="../../public/img/hero4.png" className="w-[100%] h-auto" alt="" />
+          <img src="https://img.freepik.com/premium-photo/floating-computer-online-shop-shopping-bags_72104-2478.jpg" className="w-[100%] h-auto" alt="" />
           <h1 className="absolute left-[30px] text-[20px] bottom-[150px] text-red-400 ">
             Cool Red Shirt{" "}
           </h1>
