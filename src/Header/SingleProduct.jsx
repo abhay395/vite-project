@@ -48,7 +48,7 @@ function SingleProduct() {
     console.log(typeof filterProduct[0].images.length);
   if (filterProduct.length != 0) {
     return (
-      <section className="flex " id="CategoryItems">
+      <section className="flex flex-col " id="CategoryItems">
         <section id="section">
           {filterProduct[0].images.map((item, imageIndex) => {
             let postion = "nextSlide";
@@ -76,31 +76,32 @@ function SingleProduct() {
           </button>
         </section>
         <div className="w-[300px] relative ">
-          <div className="absolute top-[120px]">
-            <h1 className="font-bold text-[40px]">{filterProduct[0].title}</h1>
-            <h2 className="font-semibold text-sky-600 text-[30px]">{`${filterProduct[0].price}$`}</h2>
-            <h2 className="text-[20px] opacity-50 mt-[20px] ">
-              {filterProduct[0].description}
-            </h2>
-            <h4 className="text-[#FF0000] font-bold text-[12px]">
-              Only {filterProduct[0].stock} left{" "}
-            </h4>
+          <div className="absolute top-[10px]">
+            <h1 className="font-bold text-[30px]">{filterProduct[0].title}</h1>
             <h1 className="text-yellow-500 text-[20px] ">
               &#9733;&#9733;&#9733;&#9733;
               <span className="text-[15px] text-black">
                 {filterProduct[0].rating}k
               </span>
             </h1>
-            <div className="flex fl  ">
-              <button className="bg-sky-400 rounded-lg p-2">Bay Now</button>
+            <h2 className="font-semibold text-sky-600 text-[25px]">{`${filterProduct[0].price}$`}</h2>
+            <h2 className="text-[15px] opacity-50  ">
+              {filterProduct[0].description}
+            </h2>
+            <h4 className="text-[#FF0000] font-bold text-[12px]">
+              Only {filterProduct[0].stock} left{" "}
+            </h4>
+           
+            <div className="flex   ">
+              <button className="bg-sky-400 rounded-lg p-2 text-[12px] w-[80px] h-[35px]  ">Bay Now</button>
               <input
                 type="number"
                 onChange={(e) => setquantity(e.currentTarget.value)}
                 value={quantity}
-                className="w-[40px] border border-black p-1 m-1"
+                className="w-[40px]  p-1 m-1"
               />
               <button
-                className="bg-yellow-400 rounded-lg p-2 ml-3 "
+                className="bg-yellow-400 rounded-lg p-2 ml-3 text-[12px] w-[80px] h-[35px] "
                 onClick={() => {
                   if (authstatus) {
                     if (!activity) {
