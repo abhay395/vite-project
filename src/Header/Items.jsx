@@ -38,7 +38,7 @@ function Items({ Category }) {
            <Link to={`/al/${item.id}`}>
                 <img
                   src={
-                    item.images[0]||'https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg?size=626&ext=jpg'
+                    item.images && item.images[0]
                   }
                   alt={item.title}
                   className="w-[300px] h-[75%]"
