@@ -1,7 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// vite.config.js
 
-// https://vitejs.dev/config/
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+
 export default defineConfig({
-  plugins: [react()],
-})
+  plugins: [vue()],
+  css: {
+    postcss: {
+      plugins: [
+        require('autoprefixer'), // Add Autoprefixer
+        // You can add other PostCSS plugins here
+      ],
+    },
+  },
+});
