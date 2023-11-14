@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 function SingleProduct() {
   // const [data ,setData]= useState(null)
-  // const [Loading ,setLoading] = useState(false)
+  const [Loading ,setLoading] = useState(false)
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { name } = useParams();
@@ -41,12 +41,14 @@ function SingleProduct() {
         // if(index===0) setindex(0)
       }
     }
+    const  timout = setTimeout(()=>{setLoading(true)},2000)
+    return ()=>clearTimeout(timout)
   }, [index]);
 
   const [quantity, setquantity] = useState(1);
   if (filterProduct.length != 0)
     console.log(typeof filterProduct[0].images.length);
-  if (filterProduct.length != 0) {
+  if (filterProduct.length != 0 && Loading) {
     return (
       <section className="flex flex-col " id="CategoryItems">
         <section id="section">
@@ -128,7 +130,7 @@ function SingleProduct() {
       </section>
     );
   }
-  return (
+ if(!Loading) return (
     <div className="flex justify-center items-center w-full h-screen">
       <span className="loader w-[100px] h-[100px] text-center "></span>
     </div>
