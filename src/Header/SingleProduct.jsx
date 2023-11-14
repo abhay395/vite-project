@@ -13,30 +13,27 @@ function SingleProduct() {
   const { name } = useParams();
   let [index, setindex] = useState(0);
   const authstatus = useSelector((state) => state.status);
-  const AllProducts = useSelector((state) => state.Categorys[1]);
-  const filterProduct = AllProducts
-    ? AllProducts.filter((item) => item.id == Number(name))
-    : [];
-  const ideaof = filterProduct ? useSelector((state) => state.Addedid) : [];
+  // const AllProducts = useSelector((state) => state.Categorys[1]);
+  // const filterProduct = AllProducts
+  //   ? AllProducts.filter((item) => item.id == Number(name))
+  //   : [];
+  const [filterProduct, setfilterProduct] = useState([]);
+  useEffect(() => {
+    fetch("https://dummyjson.com/products/1")
+      .then((res) => res.json())
+      .then((resp)=>setfilterProduct(resp))
+      .catch((error)=>console.log(error))
+  }, [name]);
+  const ideaof = filterProduct.length ? useSelector((state) => state.Addedid) : [];
   const activity =
-    ideaof.length != 0 ? ideaof.includes(filterProduct[0].id) : false;
-  // window.addEventListener("beforeunload", function (e) {
-  //   // Cancel the event
-  //   e.preventDefault();
-  //   // Chrome requires returnValue to be set
-  //   e.returnValue = "";
-
-  //   // Display a confirmation message to the user
-  //   const confirmationMessage = "Leaving this page will result in data loss.";
-  //   e.returnValue = confirmationMessage;
-  //   return confirmationMessage;
-  // });
+    ideaof.length != 0 ? ideaof.includes(filterProduct.id) : false;
+ 
   useEffect(() => {
     if (filterProduct.length != 0) {
       if (index < 0) {
-        setindex(filterProduct[0].images.length - 1);
+        setindex(filterProduct.images.length - 1);
       }
-      if (index > filterProduct[0].images.length - 1) {
+      if (index > filterProduct.images.length - 1) {
         setindex(0);
         // if(index===0) setindex(0)
       }
@@ -45,12 +42,12 @@ function SingleProduct() {
 
   const [quantity, setquantity] = useState(1);
   if (filterProduct.length != 0)
-    console.log(typeof filterProduct[0].images.length);
+    console.log(typeof filterProduct.images.length);
   if (filterProduct.length != 0) {
     return (
       <section className="flex flex-col " id="CategoryItems">
         <section id="section">
-          {filterProduct[0].images.map((item, imageIndex) => {
+          {filterProduct.images.map((item, imageIndex) => {
             let postion = "nextSlide";
             // console.log(imageIndex, index);
             if (imageIndex === index) {
@@ -58,7 +55,7 @@ function SingleProduct() {
             }
             if (
               imageIndex === index - 1 ||
-              (index === 0 && imageIndex === filterProduct[0].images.length - 1)
+              (index === 0 && imageIndex === filterProduct.images.length - 1)
             ) {
               postion = "lastSlide";
             }
@@ -77,19 +74,19 @@ function SingleProduct() {
         </section>
         <div className="w-[300px] relative ">
           <div className="absolute top-[10px]">
-            <h1 className="font-bold text-[30px]">{filterProduct[0].title}</h1>
+            <h1 className="font-bold text-[30px]">{filterProduct.title}</h1>
             <h1 className="text-yellow-500 text-[20px] ">
               &#9733;&#9733;&#9733;&#9733;
               <span className="text-[15px] text-black">
-                {filterProduct[0].rating}k
+                {filterProduct.rating}k
               </span>
             </h1>
-            <h2 className="font-semibold text-sky-600 text-[25px]">{`${filterProduct[0].price}$`}</h2>
+            <h2 className="font-semibold text-sky-600 text-[25px]">{`${filterProduct.price}$`}</h2>
             <h2 className="text-[15px] opacity-50  ">
-              {filterProduct[0].description}
+              {filterProduct.description}
             </h2>
             <h4 className="text-[#FF0000] font-bold text-[12px]">
-              Only {filterProduct[0].stock} left{" "}
+              Only {filterProduct.stock} left{" "}
             </h4>
            
             <div className="flex   ">
@@ -105,10 +102,10 @@ function SingleProduct() {
                 onClick={() => {
                   if (authstatus) {
                     if (!activity) {
-                      dispatch(addedid(filterProduct[0].id));
+                      dispatch(addedid(filterProduct.id));
                       dispatch(
                         addCart([
-                          filterProduct[0],
+                          filterProduct,
                           { quantityid: Number(quantity) },
                         ])
                       );
@@ -136,11 +133,3 @@ function SingleProduct() {
 }
 
 export default SingleProduct;
-{
-  /* <div id="for-image" className="relative" >
-<div id="Side"   ><img src={filterProduct[0].images[1]} alt="" /></div>
-<div id="active" ><img src={filterProduct[0].images[2]} alt="" /></div>
-<div id="Side" ><img src={filterProduct[0].images[3]} alt="" /></div>
-<div id="Side" ><img src={filterProduct[0].images[4]} alt="" /></div>
-</div> */
-}
