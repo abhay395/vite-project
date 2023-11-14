@@ -30,7 +30,7 @@ function Items({ Category }) {
       >
         {filterProduct.map((item) => (
           <div
-            id="bounce-element"
+            // id="bounce-element"
             key={item.id}
             className="bg-white border rounded-md border-white p-2 flex overflow-hidden shadow-2xl h-[150px] w-[90%]"
             
