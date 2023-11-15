@@ -42,7 +42,7 @@ function Items({ Category }) {
                 &#9733;&#9733;&#9733;&#9733;
                 <span className="text-[15px] text-black">{item.rating}k</span>
               </h1>
-              <h2 className="font-semibold text-sky-600 text-[20px]">{`${item.price}$`}</h2>
+              <h2 className="font-semibold text-sky-950 text-[20px]">{`${item.price}$`}</h2>
               {/* <h2 className="text-[10px] opacity-100 ">{item.description}</h2> */}
             </div>
           </div>
