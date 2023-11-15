@@ -48,20 +48,19 @@ function Header() {
   return (
     <div>
       <ul className="flex space-x-10 text-[10px] items-center px-[45px] z-100 bg-cyan-700 shadow-2xl sticky py-2 text-cyan-300 ">
-       
         {navItems.map((item) => {
           return item.active ? (
-            <Link key={item.name} to={item.slug}>
-              <li>{item.name}</li>
-            </Link>
+            <li key={item.name}>
+              <Link to={item.slug}>{item.name}</Link>
+            </li>
           ) : null;
         })}
         {authStatus && (
-          <Link to="cart">
-            <li>
+          <li to="cart">
+            <Link to="cart">
               Cart <span className="text-white">{Cart && Cart.length} </span>{" "}
-            </li>
-          </Link>
+            </Link>
+          </li>
         )}
       </ul>
     </div>
