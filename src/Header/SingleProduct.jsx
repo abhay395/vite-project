@@ -56,7 +56,7 @@ function SingleProduct() {
             }
             return (
               <article id={position} key={imageIndex}>
-                <img src={`${item}`} className="max-w-[800px] w-[100%] h-full text-center relative flex " alt=""/>
+                <img src={`${item}`} className="max-w-[800px] w-[100%] h-[400px] text-center relative flex " alt=""/>
               </article>
             );
           })}
