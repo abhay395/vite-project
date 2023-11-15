@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addCart, addedid } from "../Store/CategorySlice";
 import { useNavigate } from "react-router-dom";
+import PreloadImage from "./PreloadImage";
 
 function SingleProduct() {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ function SingleProduct() {
             }
             return (
               <article id={position} key={imageIndex}>
-                <img src={`${item}`} className="max-w-[800px] w-[100%] h-[400px] text-center relative flex " alt=""/>
+                <PreloadImage imageUrl={item} className={"max-w-[800px] w-[100%] h-[400px] text-center relative flex "} />
               </article>
             );
           })}

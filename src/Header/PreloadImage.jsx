@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const PreloadImage = ({ imageUrl }) => {
+const PreloadImage = ({ imageUrl ,className=''}) => {
   useEffect(() => {
     const link = document.createElement('link');
     link.rel = 'preload';
@@ -16,7 +16,7 @@ const PreloadImage = ({ imageUrl }) => {
   return (
     <div className='w-[100%] h-auto' >
       {/* Your component content */}
-      <img src={imageUrl} alt="Preloaded Image" className='w-[100%] h-auto'  />
+      <img src={imageUrl} alt="Preloaded Image" className={`${className}`}  />
     </div>
   );
 };

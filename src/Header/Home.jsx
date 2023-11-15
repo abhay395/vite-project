@@ -10,7 +10,7 @@ function Home() {
     <div id="CategoryItems" >
       <section id="hero-Section">
         <div className="relative">
-          <PreloadImage imageUrl={ImageUrl} />
+          <PreloadImage imageUrl={ImageUrl} className={'w-[100%] h-auto'} />
           <h1 className="absolute left-[30px] text-[20px] bottom-[150px] text-red-400 ">
             Cool Red Shirt{" "}
           </h1>
