@@ -3,12 +3,24 @@ import CategorName from "./CategoryName";
 import Items from "./Items";
 import {useDispatch} from 'react-redux'
 function Home() {
-  const dispatch = useDispatch() 
+  const dispatch = useDispatch()
+  const imageUrl='https://images.pexels.com/photos/3762927/pexels-photo-3762927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = imageUrl;
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, [imageUrl]);
   return (
     <div id="CategoryItems" >
       <section id="hero-Section">
         <div className="relative">
-          <img src="https://images.pexels.com/photos/3762927/pexels-photo-3762927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="w-[100%] h-auto" alt="" />
+          <img src={imageUrl} className="w-[100%] h-auto" alt="" />
           <h1 className="absolute left-[30px] text-[20px] bottom-[150px] text-red-400 ">
             Cool Red Shirt{" "}
           </h1>
