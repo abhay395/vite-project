@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import CategorName from "./CategoryName";
 import Items from "./Items";
-import {useDispatch, useSelector} from 'react-redux'
-import { addCatgory } from "../Store/CategorySlice";
+import {useDispatch} from 'react-redux'
+// import { addCatgory } from "../Store/CategorySlice";
 function Home() {
   const dispatch = useDispatch() 
   // const Categorylength = useSelector((state)=>state.Categorys).length
@@ -17,7 +17,7 @@ function Home() {
     <div id="CategoryItems" >
       <section id="hero-Section">
         <div className="relative">
-          <img src="https://img.freepik.com/premium-photo/floating-computer-online-shop-shopping-bags_72104-2478.jpg" className="w-[100%] h-auto" alt="" />
+          <img src="https://images.pexels.com/photos/3762927/pexels-photo-3762927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="w-[100%] h-auto" alt="" />
           <h1 className="absolute left-[30px] text-[20px] bottom-[150px] text-red-400 ">
             Cool Red Shirt{" "}
           </h1>
