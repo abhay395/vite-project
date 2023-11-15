@@ -36,13 +36,15 @@ function Items({ Category }) {
             
           >
            <Link to={`/al/${item.id}`}>
-                <img
+                
+                <div className={`w-[100px] h-[120px] bg-[url('${item.images[0]}')] `} ><img
                   src={
                     item.images[0]|| 'https://img.freepik.com/premium-photo/floating-computer-online-shop-shopping-bags_72104-2478.jpg'
                   }
                   alt={item.title}
-                  className="w-[200px] h-[100%] "
+                  className=" w-full h-full "
                 />
+                </div>
               </Link>
             <div className="flex flex-col ml-[10px] ">
             <p className="font-bold text-[20px]">{item.title}</p>
