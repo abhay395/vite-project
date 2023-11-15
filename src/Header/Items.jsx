@@ -37,7 +37,7 @@ function Items({ Category }) {
                 </div>
               </Link>
             <div className="flex flex-col ml-[10px] ">
-            <p className="font-bold text-[20px]">{item.title}</p>
+            <p className="font-bold text-[17px]">{item.title.slice(0,25)}</p>
               <h1 className="text-yellow-600 text-[20px] ">
                 &#9733;&#9733;&#9733;&#9733;
                 <span className="text-[15px] text-black">{item.rating}k</span>
