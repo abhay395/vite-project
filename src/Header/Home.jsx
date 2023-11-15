@@ -5,12 +5,12 @@ import PreloadImage from "./PreloadImage";
 import {useDispatch} from 'react-redux'
 function Home() {
   const dispatch = useDispatch() 
-  const Image = 'https://images.pexels.com/photos/3762927/pexels-photo-3762927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  const ImageUrl = 'https://images.pexels.com/photos/3762927/pexels-photo-3762927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   return (
     <div id="CategoryItems" >
       <section id="hero-Section">
         <div className="relative">
-          <PreloadImage imageUrl={Image} />
+          <PreloadImage imageUrl={ImageUrl} />
           <h1 className="absolute left-[30px] text-[20px] bottom-[150px] text-red-400 ">
             Cool Red Shirt{" "}
           </h1>
