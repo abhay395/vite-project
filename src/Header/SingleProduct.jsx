@@ -56,14 +56,14 @@ function SingleProduct() {
             }
             return (
               <article id={position} key={imageIndex}>
-                <img src={`${item}`} className="image" alt="" />
+                <img src={`${item}`} className="max-w-[800px] w-[100%] h-full text-center relative flex " alt=""/>
               </article>
             );
           })}
-          <button className="prev" onClick={() => setIndex(index - 1)}>
+          <button className=" left-0 prev " onClick={() => setIndex(index - 1)}>
             <FiChevronLeft />
           </button>
-          <button className="next" onClick={() => setIndex(index + 1)}>
+          <button className="right-0 next" onClick={() => setIndex(index + 1)}>
             <FiChevronRight />
           </button>
         </section>

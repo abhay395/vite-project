@@ -8,6 +8,7 @@ export default function AllProducts() {
   // const dispatch = useDispatch();
   
   // sort for high and low 
+  const [Loading,setLoading] = useState(false)
   const [active, setactive] = useState("relevent");
 
    const handelLowtoHigh = () => {
@@ -84,14 +85,16 @@ useEffect(()=>{
         (a, b) => parseFloat(b.price) - parseFloat(a.price)
       );
     }
-
+    setLoading(true)
     setData(filteredData);
+    const timout = setTimeout(()=>{setLoading(false)},1000)
+    return()=>clearTimeout(timout)
   }, [active, is4, max, categoryValue, brandValue]);
 
-  if (allData.length>0)
+   if (allData.length>0){
     return (
       <div className="flex flex-row">
-        <div className="w-[350px] sticky top-[68px] flex flex-col items-start h-[483px] ml-[20px] mr-[10px] bg-white p-4 rounded-lg shadow-md">
+        <div className="w-[300px] sticky top-[68px] flex flex-col items-start h-[483px] ml-[20px] mr-[10px] bg-white p-4 rounded-lg shadow-md">
           <h3 className="text-lg font-semibold">Sort by</h3>
           <button
             className={`rounded p-2 ${active === "relevent" ? "bg-blue-500 text-white" : ""}`}
@@ -156,10 +159,10 @@ useEffect(()=>{
           id="CategoryItems"
           className="flex flex-wrap w-[70%] justify-evenly space-y-3 space-x-2 items-center transition-all ease-in-out delay-500"
         >
-          {data?data.map((item) => (
-            <div
+          {data?data.map((item) => {
+           if(!Loading) return (<div
               key={item.id}
-              className="bg-white border rounded-md border-white p-2 overflow-hidden shadow-2xl h-[400px] w-[250px]"
+              className="bg-white border rounded-md border-white p-2 overflow-hidden shadow-2xl h-[200px] w-[150px]"
             >
             <Link to={`/al/${item.id}`}>
                 <img
@@ -171,26 +174,30 @@ useEffect(()=>{
                 />
               </Link>
               <p className="font-bold text-[20px]">{item.title}</p>
-              <div className="flex flex-col">
-                <h1 className="text-yellow-500 text-[20px]">
+              {/* <div className="flex flex-col"> */}
+                {/* <h1 className="text-yellow-500 text-[20px]">
                   &#9733;&#9733;&#9733;&#9733;
                   <span className="text-[15px] text-black">{item.rating}k</span>
                 </h1>
-                <h2 className="font-semibold text-sky-600 text-[20px]">{`${item.price}$`}</h2>
+                <h2 className="font-semibold text-sky-600 text-[20px]">{`${item.price}$`}</h2> */}
                 {/* <h2 className="text-[10px] opacity-100 ">{item.description}</h2> */}
-              </div>
-            </div>
-          )):(
+              {/* </div> */}
+            </div>)
+            else return  <div className='flex justify-center items-center w-full h-screen'>
+            <span className='loader w-[100px] h-[100px] text-center ' ></span>
+          </div>
+            
+              }):(
             <h1>loading</h1>
           )}
         </div>
       </div>
     );
-    // if (loading) {
+}    //if (!Loading) {
           return (
             <div className='flex justify-center items-center w-full h-screen'>
               <span className='loader w-[100px] h-[100px] text-center ' ></span>
             </div>
           );
-        // }
+       // }
 }
