@@ -2,17 +2,8 @@ import React from "react";
 import CategorName from "./CategoryName";
 import Items from "./Items";
 import {useDispatch} from 'react-redux'
-// import { addCatgory } from "../Store/CategorySlice";
 function Home() {
   const dispatch = useDispatch() 
-  // const Categorylength = useSelector((state)=>state.Categorys).length
-//   useEffect(()=>{
-//       fetch(`https://dummyjson.com/products?limit=100`)
-//   .then((respo)=>respo.json())
-//   .then((rep)=>{if(Categorylength<2)dispatch(addCatgory(rep.products))
-//   })
-//   .catch((error)=>console.log(error))
-// },[]) 
   return (
     <div id="CategoryItems" >
       <section id="hero-Section">

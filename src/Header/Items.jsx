@@ -7,20 +7,10 @@ function Items({ Category }) {
   const [data, setData] = useState([]);
   const AllProducts = useSelector((state) => state.Categorys[1]);
   const dispatch = useDispatch();
-  // if(AllProducts) console.log(AllProducts)
   const filterProduct = AllProducts
     ? AllProducts.filter((item) => item.category === Category)
     : null;
-  // const [Loading, setLoading] = useState(false);
-  // useEffect(() => {
-  //   fetch(`https://dummyjson.com/products/category/${Category}?limit=4`)
-  //     .then((respo) => respo.json())
-  //     .then((rep) => {
-  //       setData(rep.products);
-  //       setLoading(true);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, [Category]);
+ 
 
   if (filterProduct) {
     return (

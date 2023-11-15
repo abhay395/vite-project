@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { addFilterData } from "../Store/CategorySlice";
 
 export default function AllProducts() {
-  // State variables for sorting and filtering
-  // const dispatch = useDispatch();
+
   
   // sort for high and low 
   const [Loading,setLoading] = useState(false)
