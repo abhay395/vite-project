@@ -16,7 +16,7 @@ const PreloadImage = ({ imageUrl ,className=''}) => {
   return (
     <div className='w-[100%] h-auto' >
       {/* Your component content */}
-      <img src={imageUrl} alt="Preloaded Image" className={`${className}`}  />
+      <img src={imageUrl} fetchpriority="high" alt="Preloaded Image" className={`${className}`}  />
     </div>
   );
 };

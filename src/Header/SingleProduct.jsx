@@ -39,8 +39,11 @@ function SingleProduct() {
       navigate('/login');
     }
   };
-
-  return (
+  if(!filterProduct.images) return <div className='flex justify-center items-center w-full h-screen'>
+  <span className='loader w-[100px] h-[100px] text-center ' ></span>
+</div>
+   
+  else return (
     <section className="flex flex-col" id="CategoryItems">
       {filterProduct.images && (
         <section id="section">
@@ -102,6 +105,7 @@ function SingleProduct() {
       </div>
     </section>
   );
+ 
 }
 
 export default SingleProduct;
