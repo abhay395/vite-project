@@ -49,9 +49,9 @@ function Items({ Category }) {
     );
   }
   return (
-    <div className="flex  justify-evenly flex-wrap  md:flex-row md:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500 w-[100%] ">
-      <div className="bg-white border rounded-md border-white p-2 overflow-hidden shadow-2xl w-[100%] h-[200px] md:w-[250px] md:h-[350px] "></div>
-      <div className="bg-white border rounded-md border-white p-2 overflow-hidden shadow-2xl w-[100%] h-[200px] md:w-[250px] md:h-[350px]"></div>
+    <div className="flex flex-col justify-evenly md:flex-row md:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500 w-[95%]  ">
+      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
+      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px]"></div>
     </div>
   );
 }
