@@ -35,7 +35,7 @@ function Login() {
   if (loading) {
     // Display a loader when loading is true
     return (
-      <div className="flex justify-center items-center w-full h-full">
+      <div className="flex justify-center items-center w-full h-[400px]">
         <span className="loader w-[100px] h-[100px] text-center "></span>
       </div>
     );

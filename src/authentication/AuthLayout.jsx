@@ -27,7 +27,7 @@ export default function AuthLayout({children, authentication = true}) {
         setLoader(false)
     }, [authStatus, navigate, authentication])
 
-  return loader ? (<div className="flex justify-center items-center w-full h-full">
+  return loader ? ( <div className="flex justify-center items-center w-full h-[400px]">
   <span className="loader w-[100px] h-[100px] text-center "></span>
 </div>) : <>{children}</>
 }
