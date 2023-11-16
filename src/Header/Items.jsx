@@ -49,7 +49,7 @@ function Items({ Category }) {
     );
   }
   return (
-    <div className="flex  justify-evenly  md:flex-row md:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500 w-[100%] ">
+    <div className="flex  justify-evenly flex-wrap  md:flex-row md:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500 w-[100%] ">
       <div className="bg-white border rounded-md border-white p-2 overflow-hidden shadow-2xl w-[90%] h-[150px] md:w-[250px] md:h-[350px] "></div>
       <div className="bg-white border rounded-md border-white p-2 overflow-hidden shadow-2xl w-[90%] h-[150px] md:w-[250px] md:h-[350px]"></div>
     </div>
