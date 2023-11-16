@@ -34,10 +34,10 @@ function Cart() {
     return (
       <div
         id="CategoryItems"
-        className="flex  justify-center  bg-sky-100 mt-[40px] space-y-[40px] relative "
+        className="flex  justify-center flex-col md:flex-row  bg-sky-100 mt-[40px] space-y-[40px] relative "
       >
-        <div className="w-[60%]">
-          <div className=" ml-[10px] mb-[10px] w-[100%] h-[40px] bg-white flex justify-between items-center p-[20px] ">
+        <div className=" w-[100%] md:w-[60%]  ">
+          <div className=" md:ml-[10px] md:mb-[10px] w-[100%] h-[40px] bg-white flex justify-between items-center p-[20px] ">
             <p>
               Delevery :{" "}
               <span className="font-semibold">to indore Gori nagar iti...</span>{" "}
@@ -50,7 +50,7 @@ function Cart() {
           {Cartid.map((item) => (
             <div
               key={item[0].id}
-              className="w-[100%] ml-[10px] flex items-start bg-white mt-1 "
+              className="w-[100%] md:ml-[10px] flex items-start bg-white mt-1 relative "
             >
               <div className="p-5 flex flex-col ">
                 <img
@@ -113,13 +113,13 @@ function Cart() {
               </div>
             </div>
           ))}
-          <div className="w-[100%] h-[50px]  bottom-0 mt-1 self-auto sticky bg-white ml-2 pr-[10px] flex justify-end items-center ">
+          <div className="w-[100%] h-[50px]  md:bottom-0 top-0 mt-1 self-auto sticky bg-white md:ml-2 pr-[10px] flex justify-end items-center ">
             <button className="w-auto px-2  p-[10px] bg-yellow-400 ">
               place Order
             </button>
           </div>
         </div>
-        <div className="w-[300px] sticky top-[100px]   flex flex-col items-start h-[283px] ml-[40px] bg-white">
+        <div className="md:w-[300px] w-[100%] sticky top-[100px]   flex flex-col items-start h-[283px] md:ml-[40px] bg-white">
           <p className=" pl-[20px]  opacity-60 uppercase p-[15px] ">
             Price Detail
           </p>
@@ -148,7 +148,11 @@ function Cart() {
               </span>
             </p>
           </div>
+         <div>
+          
+         </div>
         </div>
+        
       </div>
     );
   return (

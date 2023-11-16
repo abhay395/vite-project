@@ -58,7 +58,7 @@ function Header() {
         {authStatus && (
           <li to="cart">
             <Link to="cart">
-              Cart <span className="text-white">{Cart && Cart.length} </span>{" "}
+              Cart <span className="text-black">{Cart && Cart.length} </span>{" "}
             </Link>
           </li>
         )}
