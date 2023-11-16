@@ -2,21 +2,18 @@ import React from "react";
 import CategorName from "./CategoryName";
 import Items from "./Items";
 import PreloadImage from "./PreloadImage";
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 function Home() {
   const dispatch = useDispatch() 
-  const ImageUrl = 'https://images.pexels.com/photos/5662862/pexels-photo-5662862.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  const singleProduct = useSelector(state=>state.Categorys[1]?state.Categorys[1][5]:null)
+  const ImageUrl = singleProduct?singleProduct.images[2]:'https://images.pexels.com/photos/5662862/pexels-photo-5662862.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  console.log(singleProduct)
   return (
     <div id="CategoryItems" >
       <section id="hero-Section">
         <div className="relative">
-          <PreloadImage imageUrl={ImageUrl} className={'w-[100%] h-auto'} />
-          <h1 className="absolute left-[30px] text-[20px] bottom-[150px] text-red-400 ">
-            Cool Red Shirt{" "}
-          </h1>
-          <button className="absolute bottom-[100px] left-[20px] text-[30px] bg-white px-[10px] rounded-md  text-sky-800 ">
-            buy Now
-          </button>
+          <PreloadImage imageUrl={ImageUrl} className={'w-[100%] h-[200px]'} />
+         
         </div>
       </section>
       {CategorName.map((item) => {
