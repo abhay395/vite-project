@@ -36,11 +36,11 @@ function Items({ Category }) {
         </div>
         <div className="flex flex-col ml-[10px] w-[200px]  ">
         <p className="font-bold text-[20px]">{item.title.slice(0,20)}</p>
-          <h1 className="text-yellow-500 text-[20px]">
+          <h1 className="text-yellow-700 text-[20px]">
             &#9733;&#9733;&#9733;&#9733;
             <span className="text-[15px] text-black">{item.rating}k</span>
           </h1>
-          <h2 className="font-semibold text-sky-600 text-[20px]">{`${item.price}$`}</h2>
+          <h2 className="font-semibold text-sky-700 text-[20px]">{`${item.price}$`}</h2>
           <h2 className="text-[10px] opacity-100 ">{item.description}</h2>
         </div>
       </div>
