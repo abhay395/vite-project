@@ -47,7 +47,7 @@ function Header() {
   ];
   return (
     <div>
-      <ul className="flex space-x-10 text-[12px] font-bold xl:text-[25px] md:text-[17px] items-center px-[45px] z-100 bg-white shadow-2xl sticky py-2 text-black ">
+      <ul className="flex space-x-10 text-[10px] font-bold xl:text-[25px] md:text-[17px] items-center px-[45px] z-100 bg-white shadow-2xl sticky py-2 text-black ">
         {navItems.map((item) => {
           return item.active ? (
             <li key={item.name}>
