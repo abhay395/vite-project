@@ -161,7 +161,7 @@ useEffect(()=>{
           {data?data.map((item) => {
            if(!Loading) return (<div
               key={item.id}
-              className="bg-white border rounded-md border-white p-2 overflow-hidden shadow-2xl h-[200px] w-[150px]"
+              className="bg-white border rounded-md border-white p-2 overflow-hidden shadow-2xl h-[200px] w-[150px] xl:w-[250px] xl:h-[350px] "
             >
             <Link to={`/al/${item.id}`}>
                 <img
@@ -169,18 +169,18 @@ useEffect(()=>{
                     item.images?item.images[0]:'https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg?size=626&ext=jpg'
                   }
                   alt={item.title}
-                  className="w-[300px] h-[75%]"
+                  className="w-[300px] h-[75%] xl:w-[300px] "
                 />
               </Link>
-              <p className="font-bold text-[20px]">{item.title}</p>
-              {/* <div className="flex flex-col"> */}
-                {/* <h1 className="text-yellow-500 text-[20px]">
+              <p className="font-bold text-[20px]">{item.title.slice(0,20)}</p>
+              <div className="flex flex-col">
+                <h1 className="text-yellow-500 text-[20px]">
                   &#9733;&#9733;&#9733;&#9733;
                   <span className="text-[15px] text-black">{item.rating}k</span>
                 </h1>
-                <h2 className="font-semibold text-sky-600 text-[20px]">{`${item.price}$`}</h2> */}
+                <h2 className="font-semibold text-sky-600 text-[20px]">{`${item.price}$`}</h2>
                 {/* <h2 className="text-[10px] opacity-100 ">{item.description}</h2> */}
-              {/* </div> */}
+              </div>
             </div>)
             else return  <div className='flex justify-center items-center w-full h-screen'>
             <span className='loader w-[100px] h-[100px] text-center ' ></span>

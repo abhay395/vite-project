@@ -5,7 +5,7 @@ import PreloadImage from "./PreloadImage";
 import {useDispatch} from 'react-redux'
 function Home() {
   const dispatch = useDispatch() 
-  const ImageUrl = 'https://images.pexels.com/photos/3762927/pexels-photo-3762927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  const ImageUrl = 'https://images.pexels.com/photos/5662862/pexels-photo-5662862.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   return (
     <div id="CategoryItems" >
       <section id="hero-Section">
