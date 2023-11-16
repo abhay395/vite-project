@@ -11,8 +11,8 @@ function Home() {
   return (
     <div id="CategoryItems" >
       <section id="hero-Section">
-        <div className="relative">
-          <PreloadImage imageUrl={ImageUrl} className={'w-[100%] h-auto'} />
+        <div className="relative w-full h-[300px] md:h-[400px] ">
+          <PreloadImage imageUrl={ImageUrl} className={'w-[100%] h-[300px] md:h-[400px]'} />
          
         </div>
       </section>
