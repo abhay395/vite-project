@@ -43,7 +43,7 @@ function Items({ Category }) {
                   />
                 </Link>
               </div>
-              <div className="flex flex-col ml-[10px] w-[50%]  ">
+              <div className="flex flex-col ml-[10px] w-[50%] sm:w-[100%]  ">
                 <p className="font-bold text-[20px]">
                   {item.title.slice(0, 20)}
                 </p>
