@@ -30,7 +30,7 @@ function Items({ Category }) {
               id="CategoryItems"
               className="bg-white border rounded-sm  flex p-2 overflow-hidden shadow-2xl h-[200px] w-full   sm:flex-col sm:w-[250px] sm:h-[350px] "
             >
-              <div className="w-[150px] sm:w-full sm:h-[150px] h-full border ">
+              <div className="w-[50%] sm:w-full sm:h-[150px] h-full border ">
                 <Link to={`/al/${item.id}`}>
                   <img
                     src={
@@ -39,11 +39,11 @@ function Items({ Category }) {
                         : "https://img.freepik.com/free-photo/abstract-surface-textures-white-concrete-stone-wall_74190-8189.jpg?size=626&ext=jpg"
                     }
                     alt={item.title}
-                    className=" w-[100%] h-full xl:w-[300px] "
+                    className=" w-[100%] h-full sm:w-[300px] "
                   />
                 </Link>
               </div>
-              <div className="flex flex-col ml-[10px] w-[200px]  ">
+              <div className="flex flex-col ml-[10px] w-[50%]  ">
                 <p className="font-bold text-[20px]">
                   {item.title.slice(0, 20)}
                 </p>
@@ -60,8 +60,8 @@ function Items({ Category }) {
         
       );
        return (
-        <div className="flex flex-col justify-evenly sm:flex-row sm:flex-wrap space-y-3 mt-4 space-x-2 items-center transition-all ease-in-out delay-500 w-[95%]  ">
-          <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "></div>
+        <div className="flex flex-col justify-evenly sm:flex-row sm:flex-wrap space-y-3 mt-4 space-x-2 items-center transition-all ease-in-out delay-500 w-full  ">
+          <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-full  sm:flex-col sm:w-[250px] sm:h-[350px] "></div>
           <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px]"></div>
           <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "></div>
           <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px]"></div>
@@ -71,7 +71,7 @@ function Items({ Category }) {
   }
  
   return (
-    <div className="flex flex-col justify-evenly sm:flex-row sm:flex-wrap space-y-3 mt-4 space-x-2 items-center transition-all ease-in-out delay-500 w-[95%]  ">
+    <div className="flex flex-col justify-evenly sm:flex-row sm:flex-wrap space-y-3 mt-4 space-x-2 items-center transition-all ease-in-out delay-500 w-full  ">
       <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "></div>
       <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px]"></div>
       <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "></div>
