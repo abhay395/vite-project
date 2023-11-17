@@ -17,7 +17,7 @@ function Home() {
   if(!Loading) return (
     <div id="CategoryItems" >
       <section id="hero-Section">
-        <div className="relative w-full h-[300px] md:h-[400px] ">
+        <div className="relative w-full h-[200px] md:h-[400px] ">
           <PreloadImage imageUrl={ImageUrl} className={'w-[100%] h-[200px] md:h-[400px]'} />
          
         </div>
