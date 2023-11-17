@@ -22,15 +22,15 @@ function Items({ Category }) {
     if (!Loading)  return (
         <div
           id="CategoryItems"
-          className=" flex flex-col justify-evenly md:flex-row md:flex-wrap  space-y-3 space-x-2 items-center transition-all ease-in-out delay-500"
+          className=" flex flex-col justify-evenly sm:flex-row sm:flex-wrap  space-y-3 space-x-2 items-center transition-all ease-in-out delay-500"
         >
           {filterProduct.map((item) => (
             <div
               key={item.id}
               id="CategoryItems"
-              className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "
+              className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "
             >
-              <div className="w-[150px] md:w-full md:h-[150px] h-full ">
+              <div className="w-[150px] sm:w-full sm:h-[150px] h-full ">
                 <Link to={`/al/${item.id}`}>
                   <img
                     src={
@@ -60,23 +60,23 @@ function Items({ Category }) {
         
       );
        return (
-        <div className="flex flex-col justify-evenly md:flex-row md:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500 w-[95%]  ">
-          <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
-          <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px]"></div>
-          <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
-          <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px]"></div>
-          <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
+        <div className="flex flex-col justify-evenly sm:flex-row sm:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500 w-[95%]  ">
+          <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "></div>
+          <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px]"></div>
+          <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "></div>
+          <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px]"></div>
+          <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "></div>
         </div>
       );
   }
  
   return (
-    <div className="flex flex-col justify-evenly md:flex-row md:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500 w-[95%]  ">
-      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
-      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px]"></div>
-      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
-      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px]"></div>
-      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
+    <div className="flex flex-col justify-evenly sm:flex-row sm:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500 w-[95%]  ">
+      <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "></div>
+      <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px]"></div>
+      <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "></div>
+      <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px]"></div>
+      <div className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "></div>
     </div>
   );
 }
