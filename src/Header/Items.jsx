@@ -28,9 +28,9 @@ function Items({ Category }) {
             <div
               key={item.id}
               id="CategoryItems"
-              className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[98%]  sm:flex-col sm:w-[250px] sm:h-[350px] "
+              className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "
             >
-              <div className="w-[150px] sm:w-full sm:h-[150px] h-full ">
+              <div className="w-[115px] sm:w-full sm:h-[150px] h-full ">
                 <Link to={`/al/${item.id}`}>
                   <img
                     src={
@@ -43,7 +43,7 @@ function Items({ Category }) {
                   />
                 </Link>
               </div>
-              <div className="flex flex-col ml-[10px] w-[195px]  ">
+              <div className="flex flex-col ml-[10px] w-[200px]  ">
                 <p className="font-bold text-[20px]">
                   {item.title.slice(0, 20)}
                 </p>
