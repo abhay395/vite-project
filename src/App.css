@@ -122,3 +122,12 @@ article#nextSlide {
     .active{
         background-color: aqua;
     }
+    .custom-toast {
+        z-index: 9999; /* Set your desired z-index value */
+      }
+
+      .black-background{
+        /* background-color: aqua; */
+        z-index: 9999;
+      }
+     

@@ -1,17 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   removeCart,
   incrementQuantity,
   decrementQuantity,
+  removeAllCart,
   // addCart,
 } from "../Store/CategorySlice";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
+  const notify = () => {
+    toast("Your OrderPlaced", {
+      className: "black-background",
+      bodyClassName: "grow-font-size",
+      progressClassName: "fancy-progress-bar",
+    });
+  };
   const [removeid, setremoveid] = useState(null);
   const Cartid = useSelector((state) => state.CartId);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const totalprice = Cartid.reduce((accumulator, currentValue) => {
     return (
@@ -114,12 +126,28 @@ function Cart() {
             </div>
           ))}
           <div className="w-[100%] h-[50px]  md:bottom-0 top-0 mt-1 self-auto sticky bg-white md:ml-2 pr-[10px] flex justify-end items-center ">
-            <button className="w-auto px-2  p-[10px] bg-yellow-400 ">
+            <button
+              className="w-auto px-2  p-[10px] bg-yellow-400 "
+              onClick={() => {
+                dispatch(removeAllCart())
+                navigate("/")
+                notify();
+              }}
+            >
               place Order
             </button>
+            {/* <ToastContainer
+              toastClassName={({ type }) =>
+                contextClass[type || "default"] +
+                " relative flex p-1 z-555555 min-h-10 rounded-md justify-between bg-black overflow-hidden cursor-pointer "
+              }
+              bodyClassName={() => "text-sm font-white z-50  font-med block bg-black p-3 "}
+              position="top-center mt-[20px] z-50"
+              autoClose={3000}
+            /> */}
           </div>
         </div>
-        <div className="md:w-[300px] w-[100%] sticky top-[100px]   flex flex-col items-start h-[283px] md:ml-[40px] bg-white">
+        <div className="md:w-[300px] w-[100%] z-50 sticky top-[100px]   flex flex-col items-start h-[283px] md:ml-[40px] bg-white">
           <p className=" pl-[20px]  opacity-60 uppercase p-[15px] ">
             Price Detail
           </p>
@@ -148,11 +176,8 @@ function Cart() {
               </span>
             </p>
           </div>
-         <div>
-          
-         </div>
+          <div></div>
         </div>
-        
       </div>
     );
   return (

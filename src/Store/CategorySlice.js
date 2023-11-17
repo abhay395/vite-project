@@ -9,6 +9,7 @@ const initialState = {
       },
     ],
   ],
+  notifyCall:false,
   CartId: [],
   Addedid: [],
   SearchItem: "",
@@ -37,6 +38,10 @@ export const CategorySlice = createSlice({
           state.Addedid.indexOf(action.payload)
         );
       }
+    },
+    removeAllCart:(state)=>{
+      state.CartId=[]
+      state.Addedid=[]
     },
     incrementQuantity: (state, action) => {
       const productId = action.payload[0];
@@ -69,6 +74,9 @@ export const CategorySlice = createSlice({
       state.status = false;
       state.userData = null;
     },
+    notifyCallSet:(state)=>{
+      state.notifyCall=true
+    }
   },
 });
 
@@ -81,6 +89,7 @@ export const {
   addedid,
   SetSearchitem,
   addFilterData,
-  login, logout
+  login, logout,notifyCallSet
+  ,removeAllCart
 } = CategorySlice.actions;
 export default CategorySlice.reducer;
