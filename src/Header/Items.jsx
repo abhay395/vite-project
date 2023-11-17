@@ -22,7 +22,7 @@ function Items({ Category }) {
     if (!Loading)  return (
         <div
           id="CategoryItems"
-          className=" flex flex-col justify-evenly sm:flex-row sm:flex-wrap  space-y-3 space-x-2 items-center transition-all ease-in-out delay-500"
+          className=" flex flex-col justify-evenly sm:flex-row sm:flex-wrap w-full  space-y-3 space-x-2 items-center transition-all ease-in-out delay-500"
         >
           {filterProduct.map((item) => (
             <div
