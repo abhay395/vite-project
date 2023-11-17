@@ -14,7 +14,7 @@ function Home() {
   const singleProduct = useSelector(state=>state.Categorys[1]?state.Categorys[1][5]:null)
   const ImageUrl = 'https://images.pexels.com/photos/5662862/pexels-photo-5662862.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   console.log(singleProduct)
-  if(!Loading) return (
+   return (
     <div id="CategoryItems" >
       <section id="hero-Section">
         <div className="relative w-full h-[200px] md:h-[400px] ">
@@ -42,9 +42,6 @@ function Home() {
       })}
     </div>
   );
-  return (<div className="flex justify-center items-center w-full h-screen">
-  <span className="loader w-[100px] h-[100px] text-center "></span>
-</div>)
 }
 
 export default Home;
