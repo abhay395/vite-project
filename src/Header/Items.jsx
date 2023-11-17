@@ -5,27 +5,29 @@ import { useDispatch, useSelector } from "react-redux";
 // import { addCart,  } from "../Store/CategorySlice";
 function Items({ Category }) {
   const [data, setData] = useState([]);
-  const [Loading, setLoading] = useState(true);
-  useEffect(() => {
-    const timout = setTimeout(() => setLoading(false), 1000);
-    return () => clearTimeout(timout);
-  }, []);
+  const [Loading, setLoading] = useState(false);
   const AllProducts = useSelector((state) => state.Categorys[1]);
   const dispatch = useDispatch();
   const filterProduct = AllProducts
-    ? AllProducts.filter((item) => item.category === Category)
-    : null;
-
+  ? AllProducts.filter((item) => item.category === Category)
+  : null;
+  useEffect(() => {
+    setLoading(true)
+    const timout = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timout);
+  }, []);
+    
   if (filterProduct) {
-    if (!Loading)
-      return (
+    
+    if (!Loading)  return (
         <div
           id="CategoryItems"
-          className=" flex flex-col justify-evenly md:flex-row md:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500"
+          className=" flex flex-col justify-evenly md:flex-row md:flex-wrap  space-y-3 space-x-2 items-center transition-all ease-in-out delay-500"
         >
           {filterProduct.map((item) => (
             <div
               key={item.id}
+              id="CategoryItems"
               className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "
             >
               <div className="w-[150px] md:w-full md:h-[150px] h-full ">
@@ -55,18 +57,28 @@ function Items({ Category }) {
             </div>
           ))}
         </div>
+        
+      );
+       return (
+        <div className="flex flex-col justify-evenly md:flex-row md:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500 w-[95%]  ">
+          <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
+          <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px]"></div>
+          <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
+          <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px]"></div>
+          <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
+        </div>
       );
   }
-  if (Loading)
-    return (
-      <div className="flex flex-col justify-evenly md:flex-row md:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500 w-[95%]  ">
-        <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
-        <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px]"></div>
-        <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
-        <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px]"></div>
-        <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
-      </div>
-    );
+ 
+  return (
+    <div className="flex flex-col justify-evenly md:flex-row md:flex-wrap space-y-3 space-x-2 items-center transition-all ease-in-out delay-500 w-[95%]  ">
+      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
+      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px]"></div>
+      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
+      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px]"></div>
+      <div className="bg-white border rounded-md border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  md:flex-col md:w-[250px] md:h-[350px] "></div>
+    </div>
+  );
 }
 
 export default Items;
