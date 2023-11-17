@@ -30,7 +30,7 @@ function Items({ Category }) {
               id="CategoryItems"
               className="bg-white border rounded-sm border-white flex p-2 overflow-hidden shadow-2xl h-[200px] w-[100%]  sm:flex-col sm:w-[250px] sm:h-[350px] "
             >
-              <div className="w-[115px] sm:w-full sm:h-[150px] h-full ">
+              <div className="w-[150px] sm:w-full sm:h-[150px] h-full ">
                 <Link to={`/al/${item.id}`}>
                   <img
                     src={
