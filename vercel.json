@@ -1,7 +1,7 @@
 {
     "builds": [
       {
-        "src": "main.jsx",
+        "src": "index.js",
         "use": "@vercel/node"
       },
       {
@@ -10,6 +10,18 @@
       }
     ],
     "routes": [
+      {
+        "src": "/products",
+        "dest": "index.js"
+      },
+      {
+        "src": "/products/(.*)",
+        "dest": "index.js"
+      },
+      {
+        "src": "/add",
+        "dest": "dist/index.html"
+      },
       {
         "src": "/",
         "dest": "dist/index.html"
